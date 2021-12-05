@@ -1,0 +1,26 @@
+type Block = {
+    row:boolean,
+    flex:boolean,
+    center:boolean,
+    middle:boolean,
+    top:boolean,
+    bottom:boolean,
+    right:boolean,
+    left:boolean,
+    shadow:boolean,
+    space:boolean,
+    fluid:boolean,
+    height:boolean,
+    margin:boolean,
+    padding:boolean,
+    shadowColor:boolean,
+    backgroundColor:string,
+    card:boolean,
+    width:boolean,
+    safe:boolean,
+    touchable:boolean,
+    children:boolean,
+    style:boolean,
+
+}
+export type {Block}
