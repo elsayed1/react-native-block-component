@@ -13,6 +13,8 @@
   "noUnusedLocals": true,
   "noUnusedParameters": true,
   "resolveJsonModule": true,
+  "declarationMap": true,
+  "declaration":true,
   "skipLibCheck": true,
   "strict": true,
   "target": "esnext",
