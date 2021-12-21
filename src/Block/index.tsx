@@ -1,8 +1,9 @@
-import * as  React from "react";
-import { View, SafeAreaView, TouchableOpacity } from "react-native";
+import   React,{FC} from "react";
+import {  SafeAreaView, TouchableOpacity,ViewStyle,View } from "react-native";
 import { styles as stylesFunc } from "./styles";
+import   {Block as BlockType} from '../types';
 
-function Block({
+const Block: FC<BlockType> = ({
     row,
     flex,
     center,
@@ -11,8 +12,12 @@ function Block({
     bottom,
     right,
     left,
-    shadow,
+
+    wrap,
     space,
+    alignContent,
+
+    shadow,
     fluid,
     height,
     margin,
@@ -25,18 +30,18 @@ function Block({
     touchable,
     children,
     style,
-    theme,
     ...rest
-}) {
-    const styles = stylesFunc(theme);
+}) =>{
+    const isDirectionRow =row
+    const styles = stylesFunc(isDirectionRow as boolean);
 
-    const handelProp = (prop, value) => {
+    const handelProp = (prop:string, value:number[]|number) => {
         if (typeof value === "number") {
             return {
                 [prop]: value,
             };
         }
-        const getStyle = (values) => ({
+        const getStyle = (values:number[]) => ({
             [`${prop}Top`]: values[0] || 0,
             [`${prop}Right`]: values[1] || 0,
             [`${prop}Bottom`]: values[2] || value[0] || 0,
@@ -48,7 +53,7 @@ function Block({
         return 0;
     };
 
-    const styleBlock = [
+    const styleBlock:ViewStyle[]= [    
         styles.block,
         row && styles.row,
         flex && { flex: flex === true ? 1 : flex },
@@ -58,7 +63,11 @@ function Block({
         bottom && styles.bottom,
         right && styles.right,
         left && styles.left,
+
         space && { justifyContent: `space-${space}` },
+        wrap && {flexWrap:wrap},
+        alignContent && {alignContent},
+
         shadow && styles.shadow,
         fluid && styles.fluid,
         card && styles.card,
@@ -70,16 +79,17 @@ function Block({
         backgroundColor && { backgroundColor },
         style,
     ];
-
+    if(safe && touchable)
+    throw new Error("can't use safe and touchable together")
     if (safe) {
         return <SafeAreaView style= { styleBlock } {...rest }>{ children }</SafeAreaView>
     }
     if (touchable) {
-        return  <TouchableOpacity style= { styleBlock } {...rest } >{ children }</TouchableOpacity>
+        return  <TouchableOpacity  style= { styleBlock } {...rest } >{ children }</TouchableOpacity>
     
     }
     return (
-        <View style= { styleBlock } {...rest }>{ children }</View>
+        <View  style= { styleBlock } {...rest }>{ children }</View>
   );
 }
 
@@ -92,14 +102,18 @@ Block.defaultProps = {
     bottom: false,
     right: false,
     left: false,
+
+    wrap:undefined,
+    alignContent:undefined,
+    space: undefined,
+
     card: false,
     shadow: false,
-    space: false,
     fluid: false,
-    height: false,
-    width: false,
-    shadowColor: false,
-    backgroundColor: false,
+    height: undefined,
+    width: undefined,
+    shadowColor: '',
+    backgroundColor: '',
     safe: false,
     touchable: false,
     margin: 0,

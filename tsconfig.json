@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "lib",
-  "allowUnreachableCode": false,
-  "allowUnusedLabels": false,
-  "esModuleInterop": true,
-  "forceConsistentCasingInFileNames": true,
-  "importsNotUsedAsValues": "error",
+ 
   "jsx": "react",
   "lib": ["esnext", "dom"],
   "module": "esnext",
@@ -20,7 +16,11 @@
   "skipLibCheck": true,
   "strict": true,
   "target": "esnext",
-  "noImplicitAny": false
+  "noImplicitAny": false,
+  "allowJs": true,
+  "allowSyntheticDefaultImports": true,
+  "esModuleInterop": true,
+  "isolatedModules": true,
 },
 "exclude": ["lib/**/*"]
 }

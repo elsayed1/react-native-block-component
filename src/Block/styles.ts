@@ -1,8 +1,10 @@
 
 import { StyleSheet } from 'react-native';
 
-export const styles = theme =>
-  StyleSheet.create({
+export const styles = (isDirectionRow:boolean) =>{
+  const alignX  =isDirectionRow ?'justifyContent' : 'alignItems';
+  const alignY = isDirectionRow ?'alignItems' : 'justifyContent';
+ return  StyleSheet.create({
     block: {
       flexDirection: 'column',
     },
@@ -15,29 +17,27 @@ export const styles = theme =>
     },
     center: {
       alignItems: 'center',
-      alignSelf: 'center',
+      justifyContent:'center',
     },
     left: {
-      alignItems: 'flex-start',
+      [alignX]: 'flex-start',
     },
     right: {
-      alignItems: 'flex-end',
+      [alignX]: 'flex-end',
     },
     top: {
-      alignItems: 'flex-start',
-      alignSelf: 'flex-start',
+      [alignY]:'flex-start'
     },
     bottom: {
-      alignItems: 'flex-end',
-      alignSelf: 'flex-end',
+      [alignY]:'flex-end',
     },
     card: {
-      borderRadius: theme.borderRadius,
-      borderWidth: theme.borderWidth,
-      borderColor: theme.colors.black_two,
+      borderRadius: 5,
+      borderWidth: 1,
+      borderColor: 'black',
     },
     shadow: {
-      shadowColor: theme.colors.black_two,
+      shadowColor: 'black',
       shadowOffset: {
         width: 0,
         height: 1,
@@ -50,3 +50,5 @@ export const styles = theme =>
       width: 'auto',
     },
   });
+}
+  

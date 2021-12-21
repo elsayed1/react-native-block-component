@@ -1,6 +1,6 @@
 {
   "name": "react-native-block-component",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React native customizable View component",
   "main": "lib/index.js",
   "files": [
