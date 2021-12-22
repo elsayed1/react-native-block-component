@@ -4,7 +4,7 @@
 
 
 ### Example
-![](https://user-images.githubusercontent.com/33010618/147147663-f3e55f29-ede3-46a5-b6ca-163af030fd6a.png)
+![](https://user-images.githubusercontent.com/33010618/147148021-b09e318b-273b-4ddb-9511-b3235f26a938.png)
 ```js 
     import { Block } from "react-native-block-component";
 
