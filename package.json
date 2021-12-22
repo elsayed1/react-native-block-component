@@ -1,6 +1,6 @@
 {
   "name": "react-native-block-component",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "React native customizable View component",
   "main": "lib/index.js",
   "files": [
@@ -24,7 +24,7 @@
     "typescript": "^4.1.2"
   },
   "repository": {
-    "type": "git", 
+    "type": "git",
     "url": "git+https://github.com/elsayed1/-react-native-block"
   },
   "homepage": "https://github.com/elsayed1/-react-native-block/#readme",
