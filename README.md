@@ -1,8 +1,7 @@
-## React Native UI component
 
-## React native customizable View component
+## React Native Customizable View Component
 
-
+### Now You Can Build React-Native UI More Faster And Clean 
 ### Example
 ![](https://user-images.githubusercontent.com/33010618/147148021-b09e318b-273b-4ddb-9511-b3235f26a938.png)
 ```js 
@@ -56,7 +55,8 @@
 | bottom                        |  false  | `bool` | Set to `true` Align elements to the bottom
 | right                        |  false  | `bool` | Set to `true` Align elements to the right
 | left                        |  false  | `bool` | Set to `true` Align elements to the left
-| top                        |  false  | `bool` | Set to `true` Align elements to the top
+| wrap                        |  false  | `bool` | If true wrap the block elements if exceeded the width
+| alignContent                |  false  | `center` | `flex-start` | `flex-end` | If the Block children was wrapped `wrap` you need this props to place the elements `top,bottom,...`
 | backgroundColor     |  undefined  | `string` | Set the block backgroundColor
 | touchable     |  false  | `bool` | Make the element to be touchable `TouchableOpacity` accepts `onPress`
 | safe     |  false  | `bool` | display the Block with `SafeAreaView`

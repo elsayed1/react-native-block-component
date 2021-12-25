@@ -1,5 +1,5 @@
 import   React,{FC} from "react";
-import {  SafeAreaView, TouchableOpacity,ViewStyle,View } from "react-native";
+import {  SafeAreaView, TouchableOpacity,View,ViewStyle } from "react-native";
 import { styles as stylesFunc } from "./styles";
 import   {Block as BlockType} from '../types';
 
@@ -7,7 +7,6 @@ const Block: FC<BlockType> = ({
     row,
     flex,
     center,
-    middle,
     top,
     bottom,
     right,
@@ -53,12 +52,11 @@ const Block: FC<BlockType> = ({
         return 0;
     };
 
-    const styleBlock:ViewStyle[]= [    
+    const styleBlock:ViewStyle[]|any= [    
         styles.block,
-        row && styles.row,
+        {...(row && styles.row)},
         flex && { flex: flex === true ? 1 : flex },
         center && styles.center,
-        middle && styles.middle,
         top && styles.top,
         bottom && styles.bottom,
         right && styles.right,
@@ -79,6 +77,7 @@ const Block: FC<BlockType> = ({
         backgroundColor && { backgroundColor },
         style,
     ];
+
     if(safe && touchable)
     throw new Error("can't use safe and touchable together")
     if (safe) {
@@ -95,9 +94,8 @@ const Block: FC<BlockType> = ({
 
 Block.defaultProps = {
     row: false,
-    flex: false,
+    flex: undefined,
     center: false,
-    middle: false,
     top: false,
     bottom: false,
     right: false,
@@ -119,7 +117,7 @@ Block.defaultProps = {
     margin: 0,
     padding: 0,
     style: {},
-    children: null,
+    children: undefined,
 };
 
 export default Block;

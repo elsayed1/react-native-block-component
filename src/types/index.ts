@@ -1,10 +1,10 @@
-import {TouchableOpacityProps} from 'react-native'
+import React from 'react'
+import {TouchableOpacityProps ,ViewStyle} from 'react-native'
 
 interface  Block extends TouchableOpacityProps {
     row?: boolean;
     flex?: boolean | number;
     center?: boolean;
-    middle?: boolean;
     top?: boolean;
     bottom?: boolean;
     right?: boolean;
@@ -24,8 +24,8 @@ interface  Block extends TouchableOpacityProps {
     width?: number;
     safe?: boolean;
     touchable?: boolean;
-    children?: any;
-    style?: any;
+    children?: React.ReactNode[];
+    style?: ViewStyle;
   };
 
 export type {Block}

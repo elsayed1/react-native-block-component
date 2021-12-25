@@ -11,10 +11,6 @@ export const styles = (isDirectionRow:boolean) =>{
     row: {
       flexDirection: 'row',
     },
-    middle: {
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
     center: {
       alignItems: 'center',
       justifyContent:'center',
