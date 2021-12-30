@@ -24,7 +24,7 @@ interface  Block extends TouchableOpacityProps {
     width?: number;
     safe?: boolean;
     touchable?: boolean;
-    children?: React.ReactNode[];
+    children?: React.ReactNode;
     style?: ViewStyle;
   };
 

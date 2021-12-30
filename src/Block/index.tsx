@@ -54,7 +54,7 @@ const Block: FC<BlockType> = ({
 
     const styleBlock:ViewStyle[]|any= [    
         styles.block,
-        {...(row && styles.row)},
+        row && styles.row,
         flex && { flex: flex === true ? 1 : flex },
         center && styles.center,
         top && styles.top,
